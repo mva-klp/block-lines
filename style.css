@@ -1,0 +1,529 @@
+* {
+	box-sizing: border-box;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.container {
+	margin: 0 auto;
+	width: 355px;
+
+	counter-reset: section;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 640px;
+	}
+}
+
+@media (min-width: 1460px) {
+	.container {
+		width: 1450px;
+		display: grid;
+		align-items: start;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 170px;
+	}
+}
+
+.image-description {
+	overflow: hidden;
+	margin-top: 33px;
+	display: grid;
+}
+
+@media (min-width: 1460px) {
+	.image-description-2 .image-container{
+		order: 1;
+	}
+}
+
+.image-container {
+	position: relative;
+	display: grid;
+  justify-items: center;
+	overflow: hidden;
+	
+}
+
+@media (min-width: 768px) {
+	.image-container {
+		padding-bottom: 47px;
+	} 
+}
+
+.image {
+	width: 327px;
+}
+
+@media (min-width: 768px) {
+	.image{
+		width: 560px;
+	} 
+}
+
+/* метки на изображениях */
+
+.circle {
+	display: flex;
+	position: absolute;
+	width: 29px;
+	height: 29px;
+	border-radius: 50%;
+	background-color: transparent;
+}
+
+@media (min-width: 768px) {
+	.circle {
+		background-color: #ffffff;
+	}
+	
+}
+
+/* Горизонтальная линия метки левая */
+.left-line-circle::before {
+  content: "";
+  width: 640px;
+  height: 1px;
+  position: absolute;
+	right: 50%;
+	top: calc(50% - 1px);
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Вертикальная линия метки левая */
+.left-line-circle::after {
+  content: "";
+	height: 400px;
+	width: 1px;
+	position: absolute;
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Горизонтальная линия метки правая */
+.right-line-circle::after {
+  content: "";
+  width: 640px;
+  height: 1px;
+  position: absolute;
+	left: 50%;
+	top: calc(50% - 1px);
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Вертикальная линия метки правая */
+.right-line-circle::before {
+  content: "";
+	height: 400px;
+	width: 1px;
+	position: absolute;
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+.circle-1 {
+	top: 85px;
+	left: 100px;
+}
+
+/* Позиция Вертикальная линия 1 метки */
+.circle-1::after {
+	top: 50%;
+	left: -100px;
+}
+
+.circle-2 {
+	top: 85px;
+	right: 100px;
+}
+
+/* Позиция Вертикальная линия 2 метки */
+.circle-2::before {
+	top: 50%;
+	left: 128px;
+}
+
+.circle-3 {
+	top: 100px;
+	right: 100px;
+}
+
+/* Позиция Вертикальная линия 3 метки */
+.circle-3::before {
+	top: 50%;
+	left: 128px;
+}
+
+.circle-4 {
+	top: 100px;
+	left: 100px;
+}
+
+/* Позиция Вертикальная линия 4 метки */
+.circle-4::after {
+	top: 50%;
+	left: -100px;
+}
+
+@media (min-width: 768px) {
+	.circle-1 {
+		top: 155px;
+		left: 170px;
+	}
+	
+	/* Позиция Вертикальная линия 1 метки */
+	.circle-1::after {
+		top: 50%;
+		left: -170px;
+	}
+	
+	.circle-2 {
+		top: 155px;
+		right: 155px;
+	}
+	
+	/* Позиция Вертикальная линия 2 метки */
+	.circle-2::before {
+		top: 50%;
+		left: 183px;
+	}
+	
+	.circle-3 {
+		top: 180px;
+		right: 185px;
+	}
+	
+	/* Позиция Вертикальная линия 3 метки */
+	.circle-3::before {
+		top: 50%;
+		left: 213px;
+	}
+
+	.circle-4 {
+		top: 180px;
+		left: 185px;
+	}
+	
+	/* Позиция Вертикальная линия 4 метки */
+	.circle-4::after {
+		top: 50%;
+		left: -185px;
+	}
+}
+
+@media (min-width: 1460px) {
+	.circle-3.right-line-circle::before {
+		top: -180px;
+		height: 195px;
+	}
+
+	.circle-4.left-line-circle::after {
+		top: -180px;
+		height: 195px;
+	}
+}
+
+
+.inner-circle {
+	margin: auto;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 10px #0BA13D;
+}
+
+@media (min-width: 768px) {
+	.inner-circle {
+		width: 15px;
+		height: 15px;
+	}
+	
+}
+
+.list {
+	margin: 0 14px;
+	padding: 0;
+	list-style: none;
+}
+
+@media (min-width: 768px) {
+	.list {
+		margin: 0;
+	}
+}
+
+
+.list-item {
+	padding-bottom: 32px;
+	position: relative;
+	counter-increment: section;
+}
+
+@media (max-width: 767px) {
+	.list-item {
+		border-bottom: 1px solid #E0E0E0;
+	}
+}
+
+.list-2 .list-item:last-child {
+	border: none;
+}
+
+@media (min-width: 768px) {
+	.list-item {
+		padding: 0 40px;
+		padding-bottom: 46px;
+	}
+}
+
+/* Линия справа у элемента списка */
+.right-line-list-item::after {
+	content: "";
+	height: calc(100% + 1px);
+	width: 1px;
+	position: absolute;
+	top: 0;
+	right: -14px;
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+@media (min-width: 768px) {
+	.right-line-list-item::after {
+		right: 0;
+	}
+}
+
+/* Линия слева у элемента списка */
+.left-line-list-item::before {
+	content: "";
+	height: calc(100% + 1px);
+	width: 1px;
+	position: absolute;
+	top: 0;
+	left: -14px;
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+@media (min-width: 768px) {
+	.left-line-list-item::before {
+		left: 0;
+	}
+}
+
+@media (max-width: 1449px) {
+	.list-2 .list-item:nth-child(1).right-line-list-item::after,
+	.list-2 .list-item:nth-child(2).left-line-list-item::before,
+	.list-2 .list-item:nth-child(2).right-line-list-item::after {
+		display: none;
+	}
+}
+
+
+@media (min-width: 1460px) {
+	.list-2 .list-item:nth-child(1).left-line-list-item::before {
+		display: none;
+	}
+
+	.list-2 .list-item:nth-child(1).right-line-list-item::after {
+		top: 20px;
+		height: calc(100% - 20px);
+	}
+
+	.list-2 .list-item:nth-child(2).left-line-list-item::before {
+		top: 20px;
+		height: calc(100% - 20px);
+	}
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin: 0;
+	margin-bottom: 18px;
+	padding-top: 26px;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+	.title {
+		padding-right: 200px;
+		padding-top: 0;
+	}
+}
+
+.number {
+	margin-right: 22px;
+}
+
+.number::before {
+	content: "0"counter(section);
+	font-family: inherit;
+	font-size: 30px;
+	line-height: 37px;
+	font-weight: 500px;
+	color: #0BA13D;
+}
+
+@media (min-width: 1460px) {
+	.number {
+		align-self: start;
+	}
+}
+
+/* Горизонтальная линия заголовка справа*/
+.right-line-title::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+	left: calc(100% + 5px);
+	top: calc(50% + 12px);
+	
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Вертикальная линия заголовка справа*/
+.right-line-title::before {
+  content: "";
+	height: calc(50% + 12px);
+	width: 1px;
+	position: absolute;
+	top: 0;
+	right: -14px;
+	
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Горизонтальная линия заголовка слева */
+.left-line-title::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+	right: calc(100% + 5px);
+	top: calc(50% + 12px);
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+/* Вертикальная линия заголовка слева */
+.left-line-title::after {
+  content: "";
+	height: calc(50% + 12px);
+	width: 1px;
+	position: absolute;
+	top: 0;
+	left: -14px;
+
+	background-color: #0BA13D;
+	box-shadow: 0px 0px 4px #0BA13D;
+}
+
+@media (min-width: 768px) {
+	/* Горизонтальная линия заголовка справа */
+	.right-line-title::after {
+		left: calc(100% - 190px);
+		top: calc(50% - 1px);
+	}
+	
+	/* Вертикальная линия заголовка справа*/
+	.right-line-title::before {
+		top: 0;
+		right: -40px;
+		height: 50%;
+	}
+	
+	/* Горизонтальная линия заголовка слева */
+	.left-line-title::before {
+		right: calc(100% + 10px);
+		top: calc(50% - 1px);
+	}
+	
+	/* Вертикальная линия заголовка слева */
+	.left-line-title::after {
+		top: 0;
+		left: -40px;
+		height: 50%;
+	}
+}
+
+@media (min-width: 1460px) {
+	/* Горизонтальная линия заголовка справа*/
+	.right-line-title::after {
+		top: 20px;
+	}
+
+	/* Вертикальная линия заголовка справа*/
+	.right-line-title::before {
+		height: 20px;
+	}
+
+	/* Горизонтальная линия заголовка слева */
+	.left-line-title::before {
+		top: 20px;
+	}
+
+	/* Вертикальная линия заголовка слева */
+	.left-line-title::after {
+		height: 20px;
+	}
+
+	/* Горизонтальная линия заголовка справа */
+	.image-description-2 .right-line-title::after {
+		left: calc(100% - 200px);
+		top: 20px;
+	}
+
+	/* Вертикальная линия заголовка справа*/
+	.image-description-2 .right-line-title::before {
+		display: none;
+	}
+
+	/* Горизонтальная линия заголовка слева */
+	.image-description-2 .left-line-title::before {
+		right: calc(100% + 10px);
+		top: 20px;
+	}
+	
+	/* Вертикальная линия заголовка слева */
+	.image-description-2 .left-line-title::after {
+		display: none;
+	}
+}
+
+.description {
+	margin: 0;
+}
